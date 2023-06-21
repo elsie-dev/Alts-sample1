@@ -195,12 +195,22 @@ ul{
     float:right;
 }
 .form{
+    width: 833px;
+   height: 336px;
+   display:flex;
+   height:50vh;
+   justify-content: center;
+   align-items:center;
+   padding:20px;
+    background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+
+
+}
+.form .button{
     display:flex;
-    height:50vh;
-    justify-content: center;
-    align-items:center;
-    background:linear-gradient ();
-    padding:20px;
 }
 .form.container{
     max-width: 500px;
@@ -208,10 +218,12 @@ ul{
     background:#ffffff;
     padding:2Opx 25px;
     border-radius:5px;
+
 }
 .form form .details1{
     display:flex;
     justify-content: space-between;
+
 }
 .form form .details2{
     display:flex;
@@ -223,6 +235,61 @@ ul{
     flex-wrap:wrap;
     justify-content: space-between;
 }
-.bannner{
-    display:flex;
+.banner{
+    background: linear-gradient(rgba(30,52,72,1), rgba(30,52,72,0));
+    width: 100%;
+    height: 300px;
+    box-sizing: border-box;
 }
+.banner .footer-frame{
+    justify-content: center;
+}
+
+.brand-navigation {
+    background-color: #ffffff;
+    display: flex;
+
+  }
+
+  .brandcontent {
+    width: 960px;
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navigation {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+  .navigation a {
+    text-decoration: none;
+    padding: 3em;
+  }
+
+  .logo-nav {
+    max-width: 100px;
+  }
+
+  .button-dark {
+    height: 28x;
+    padding: 1px 20px;
+    border-radius: 4px;
+    background-color: #1E90FF;
+    border-style: none;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-size: 13px;
+    line-height: 26px;
+  }
+  .bodyimage{
+    text-align: center;
+  }
+
