@@ -694,13 +694,13 @@ p.bold {
 .faq-image {
   /*display top-left corner */
   position: relative;
-  width: 400px;
+  width: 300px;
   height: 300px;
 }
 .top-image {
   position: absolute;
   top: 0;
-  left: -400px;
+  left: -500px;
 }
 .form-image {
   position: absolute;
@@ -717,8 +717,8 @@ p.bold {
 .faq-image1 {
   position: absolute;
   /* top: 90px; */
-  bottom: -50px;
-  right: -100px;
+  bottom: -400px;
+  /* right: -100px; */
   left: -50px;
   display: flex;
   align-items: center;
@@ -730,9 +730,8 @@ p.bold {
 }
 .form-image2 {
   position: absolute;
-  bottom: 590px;
-  left: 1500px;
-  /* margin-top: 300px; */
+  bottom: -200px;
+  right: -50px;
 }
 .bottom-image1 {
   position: absolute;
@@ -741,8 +740,8 @@ p.bold {
 }
 .faq-image2 {
   position: absolute;
-  bottom: 0;
-  right: -1500px;
+  bottom: 130px;
+  right: -1513px;
 }
 
 .call-to-action {
