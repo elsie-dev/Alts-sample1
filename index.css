@@ -784,7 +784,7 @@ p.bold {
   background: #020238;
   width: 100%;
   display: flex;
-  /* padding: 5px; */
+  padding: 5px;
   justify-content: center;
   height: 500px;
 }
