@@ -456,7 +456,7 @@ button.signup {
   color: black;
   text-align: center;
   width: 100%;
-  margin-bottom: 100px ;
+  margin-bottom: 300px ;
   background-color: aliceblue;
 }
 .title-icon {
@@ -564,7 +564,7 @@ img.img {
   height: 600px;
   gap: 20px;
   text-align: center;
-  margin-top: 20px;
+  margin-bottom: 50px;
   /* padding: 100px 0px; */
 }
 .cards {
