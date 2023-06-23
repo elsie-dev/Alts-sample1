@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      position: relative;
+      width: 400px; /* Adjust the width as needed */
+      height: 400px; /* Adjust the height as needed */
+    }
+
+    .image {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .bottom-image {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+    }
+    dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      min-width: 160px;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-item {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #000;
+      background-color: #f9f9f9;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="/templates/assets/footer-vector-1.png" alt="Top Image" class="image">
+    <img src="/templates/assets/footer-vector-2.png" alt="Bottom Image" class="bottom-image">
+  </div>
+  <a href="#" class="button">Click me</a>
+  <div class="dropdown">
+    <button class="dropdown-item">Dropdown</button>
+    <div class="dropdown-content">
+      <a href="#" class="dropdown-item">Item 1</a>
+      <a href="#" class="dropdown-item">Item 2</a>
+      <a href="#" class="dropdown-item">Item 3</a>
+    </div>
+  </div>
+  <form action="#">
+    <div class="details">
+      <div class="input-box">
+        <span class="details"></span>
+        <input type="text" placeholder="Paste URL here" required />
+      </div>
+    </div>
+    <div class="details">
+      <div class="details1">
+        <!-- select option -->
+        <div class="input-box">
+          <!-- <span class="details">Choose</span> -->
+          <select name="Choose" id="Choose">
+            <option value="choose">Choose</option>
+            <option value="saab">saab</option>
+            <option value="opel">opel</option>
+            <option value="audi">audi</option>
+          </select>
+        </div>
+      </div>
+      <div class="details2">
+        <div class="input-box">
+          <span class="details"></span>
+          <input type="text" placeholder="Type Alias here" required />
+        </div>
+      </div>
+    </div>
+    <div class="button-group">
+      <button class="button started">Trim URLs</button>
+    </div>
+    <p class="click">
+      By clicking TrimURL, I agree to the
+      <b> Terms of Service,Privacy Policy</b> and Use of Cookies
+    </p>
+  </form>
+</body>
+</html>
+
+<!-- <style>
+    .hero-section{
+      background-image: url("/templates/assets/hero.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      text-align: center;
+      padding: 100px 0px;
+    }
+    .short-line,.h1{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1{
+      font-size: 50px;
+      font-weight: 700;
+      /* capitalize the font */
+      text-transform: capitalize;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .button-group{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+    a{
+      text-decoration: none;
+    }
+    .signup{
+      border-radius: 9999px;
+      color: white;
+      border-radius: 10px;
+      padding: 10px 20px;
+      margin-right: 20px;
+      border: none;
+      cursor: pointer;
+  
+    }
+    .about-image{
+      background-image: url("/templates/assets/about-image-background2.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      text-align: center;
+      padding: 100px 0px;
+    }
+    .image-description{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      text-align: center;
+      /* padding: 100px 0px; */
+    }
+    .solution{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      text-align: center;
+      padding: 100px 0px;
+    }
+    .solution div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      text-align: center;
+      padding: 100px 0px;
+      margin-right: 20px;
+    }
+    .sln{
+      color: blue;
+    }
+    .one-stop{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      text-align: center;
+      /* padding: 100px 0px; */
+      margin-left: 20px;
+    }
+    /* .about{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      text-align: center;
+      padding: 100px 0px;
+    } */
+    .why{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      text-align: center;
+      padding: 100px 0px;
+    }
+    .title-icon{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      gap: 20px;
+      text-align: center;
+      padding: 100px 0px;
+      margin-right: 20px;
+    }
+    .why-title{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      gap: 20px;
+      text-align: center;
+      padding: 100px 0px;
+      margin-left: 20px;
+    }
+    .why-cards{
+      display: grid;
+      flex-direction: row;
+      grid-template-columns: 1fr 1fr ;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      gap: 20px;
+      text-align: center;
+      padding: 100px 0px;
+    }
+    .card img{
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      background-color: aliceblue;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      gap: 20px;
+      text-align: center;
+      /* padding: 100px 0px; */
+    }
+    .card{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      gap: 20px;
+      text-align: center;
+      /* padding: 100px 0px; */
+    }
+    .card h3{
+      font-size: 20px;
+      font-weight: 700;
+      /* capitalize the font */
+      text-transform: capitalize;
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+    .card p{
+      font-size: 15px;
+      font-weight: 400;
+      /* capitalize the font */
+      text-transform: capitalize;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .card button{
+      background-color: blue;
+      color: white;
+      border-radius: 9999px;
+      padding: 10px 20px;
+      margin-right: 20px;
+      border: none;
+      cursor: pointer;
+    }
+    img .img{
+      width: 30px;
+      height: 30px;
+    }
+    .bodytext{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      gap: 20px;
+      text-align: center;
+      padding: 100px 0px;
+    }
+    .cards{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      text-align: center;
+      padding: 100px 0px;
+    }
+    .card1{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      border-radius: 10px;
+      border: 1px solid blue;
+      gap: 20px;
+      text-align: center;
+      padding: 20px;
+      margin-right: 2px;
+    }
+    .card2{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 10px;
+      background-color: #02021a;
+      overflow-y: visible;
+      align-items: center;
+      color: #fff;
+      gap: 20px;
+      text-align: center;
+      padding: 80px 80px;
+    }
+    .card3{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      border-radius: 10px;
+      border: 1px solid blue;
+      gap: 20px;
+      text-align: center;
+      padding: 20px;
+    }
+    .button-group{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      gap: 20px;
+      text-align: center;
+      /* padding: 100px 0px; */
+    }
+    .button{
+      background-color: blue;
+      color: white;
+      border-radius: 9999px;
+      padding: 10px 20px;
+      margin-right: 20px;
+      border: none;
+      cursor: pointer;
+    }
+    .button-custom{
+      background-color: white;
+      color: blue;
+      border-radius: 9999px;
+      padding: 15px 20px;
+      margin-right: 20px;
+      border: 1px solid blue;
+      cursor: pointer;
+    }
+    .button-pricing{
+      background-color: blue;
+      color: white;
+      border-radius: 9999px;
+      padding: 20px 40px;
+      margin-right: 20px;
+      border: none;
+      cursor: pointer;
+    }
+    #price{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      gap: 20px;
+      text-align: center;
+      /* padding: 100px 0px; */
+    }
+    span.price{
+      font-size: 50px;
+      font-weight: 700;
+      color: blue;
+      text-transform: capitalize;
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+    p.bold{
+      font-size: 20px;
+      font-weight: 700;
+      color: black;
+      text-transform: capitalize;
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+    .call-to-action  .container{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      gap: 20px;
+      text-align: center;
+      /* padding: 100px 0px; */
+    }
+    .image1, .image2, .footer-image{
+      /*display top-left corner */
+      position: relative;
+      width: 400px;
+      height: 400px;
+    }
+    .top-image{
+      position: absolute;
+      top: 0;
+      left: -500px;
+     
+    }
+    .top-image1{
+      position: absolute;
+      top: 0;
+      left: -100px;
+      bottom: 0;
+    }
+    .bottom-image{
+      position: absolute;
+      bottom: 0;
+      right: -500px;
+    }
+    .bottom-image1{
+      position: absolute;
+      bottom: 0;
+      right: -100px;
+    }
+  
+    .call-to-action{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      gap: 20px;
+      text-align: center;
+      background-color: #060627;
+      margin-bottom: 10px;
+    }
+    
+    .call-to-action-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      gap: 20px;
+      text-align: center;
+      padding: 100px 0px;
+    }
+    .started{
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      color: white;
+      text-transform: capitalize;
+      line-height: 1.2;
+      margin-bottom: 5px;
+      padding: 10px 20px;
+      gap: 20px;
+      text-align: center;
+    }
+  </style> -->

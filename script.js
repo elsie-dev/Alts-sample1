@@ -13,3 +13,19 @@ function toggleAccordion() {
 }
 
 items.forEach((item) => item.addEventListener('click', toggleAccordion));
+
+// dropdown menu
+const dropdown = document.querySelector('.dropdown');
+const dropdownToggle = document.querySelector('.dropdown-toggle');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+dropdownToggle.addEventListener('click', function () {
+  dropdown.classList.toggle('show');
+}
+);
+
+
+
+
+
+
