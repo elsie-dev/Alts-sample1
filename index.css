@@ -1,17 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Hind:300,400&display=swap");
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
   /* overflow-x: hidden; */
 }
 *::before,
 *::after {
   box-sizing: border-box;
 }
+.faq{
+  /* padding: 4rem; */
+  width: 100%;
+  height: 800px;
+  background: #fff;
+  margin-bottom: 300px;
 
+}
 .faq .container {
-  margin: 0 auto;
-  padding: 4rem;
-  width: 48rem;
+  margin: auto;
+  /* padding: 4rem; */
+
 }
 .accordion .accordion-item {
   border-bottom: 1px solid #e5e5e5;
@@ -327,7 +336,7 @@ p.click {
   align-items: center;
   color: black;
   text-align: center;
-  padding: 100px 0px;
+  margin-top: 100px;
 }
 .short-line,
 .h1 {
@@ -392,6 +401,7 @@ button.signup {
   width: 100%;
   background: aliceblue;
   gap: 50px;
+  height: 300px;
   color: black;
   text-align: center;
 }
@@ -441,10 +451,13 @@ button.signup {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 50px;
   align-items: center;
   color: black;
   text-align: center;
-  padding: 100px 0px;
+  width: 100%;
+  margin-bottom: 100px ;
+  background-color: aliceblue;
 }
 .title-icon {
   display: flex;
@@ -547,9 +560,12 @@ img.img {
   justify-content: center;
   align-items: center;
   color: black;
+  width: 100%;
+  height: 600px;
   gap: 20px;
   text-align: center;
-  padding: 100px 0px;
+  margin-top: 20px;
+  /* padding: 100px 0px; */
 }
 .cards {
   display: grid;
@@ -652,7 +668,7 @@ span.price {
   color: blue;
   text-transform: capitalize;
   line-height: 1.2;
-  margin-bottom: 5px;
+  margin-top: 50px;
 }
 p.bold {
   font-size: 20px;
@@ -700,7 +716,8 @@ p.bold {
 }
 .faq-image1 {
   position: absolute;
-  top: 100px;
+  /* top: 90px; */
+  bottom: -50px;
   right: -100px;
   left: -50px;
   display: flex;
@@ -768,7 +785,15 @@ p.bold {
   background: #020238;
   width: 100%;
   display: flex;
-  padding: 5px;
+  /* padding: 5px; */
   justify-content: center;
   height: 500px;
 }
+/* .faqs{
+  background: #020238;
+  width: 100%;
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  height: 500px;
+} */
