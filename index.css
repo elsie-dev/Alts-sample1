@@ -277,6 +277,8 @@ p.click{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Gilroy-Heavy',sans-serif;
+
   }
 
   .navigation {
@@ -313,8 +315,6 @@ p.click{
     line-height: 26px;
   }
 
-
-
   .hero-section{
     /* background-image: url("/templates/assets/hero.png"); */
     background-image: linear-gradient(to bottom, rgba(249, 240, 238, 255), rgba(253, 249, 233, 255)80%,rgba(255, 255, 255, 255) ), url("/templates/assets/hero.png");
@@ -330,6 +330,7 @@ p.click{
     text-align: center;
     padding: 100px 0px;
   }
+ 
   .hero-image{
     display: block;
     margin: 0 auto;
