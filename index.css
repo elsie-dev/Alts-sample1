@@ -316,7 +316,8 @@ p.click{
 
 
   .hero-section{
-    background-image: url("/templates/assets/hero.png");
+    /* background-image: url("/templates/assets/hero.png"); */
+    background-image: linear-gradient(to bottom, rgba(249, 240, 238, 255), rgba(253, 249, 233, 255)80%,rgba(255, 255, 255, 255) ), url("/templates/assets/hero.png");
     font-family:'Gilroy-Regular', sans-serif;
     background-repeat: no-repeat;
     background-size: cover;
@@ -329,8 +330,13 @@ p.click{
     text-align: center;
     padding: 100px 0px;
   }
+  .hero-image{
+    display: block;
+    margin: 0 auto;
+  }
   .short-line,.h1{
-    display: flex;
+    /* display: flex; */
+    display:inline-block;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -466,6 +472,8 @@ p.click{
     padding: 100px 0px;
     margin-left: 20px;
   }
+
+
   .why-title p{
     font-size: 20px;
     margin-right: 20px;
