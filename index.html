@@ -1,81 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/index.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
     <title>assignment</title>
-</head>
-<body>
+  </head>
+  <style>
 
-  <header class="brand-navigation">
-    <div class="brandcontent">
-      <img class="logo-nav" src="/templates/assets/Logo.png"></img>
-      <nav>
-        <ul class="navigation">
-          <li><a href="#">My URLS</a></li>
-          <li>Features</li>
-          <li>Pricing</li>
-          <li>Analytics</li>
-          <li>FAQs</li>
-        </ul>
+    div,
+    form,
+    input,
+    select {
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+    
+      font-size: 16px;
+      color: #666;
+      line-height: 22px;
+    }
 
-      </nav>
-      <a href="#">Login</a>
-      <div class="nav">
-        <button class="button-dark">Try for free</button>
+    .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+       /* top: 100px; */
+    }
+    form {
+      width: 66.6%;
+      padding: 30px;
+      height: 450px;
+      /* padding: 5px; */
+      box-shadow: 0 0 10px 0 #fff;
+      background: #fff;
+      border-radius: 6px;
+    }
+
+
+    input,
+    select {
+      margin-bottom: 10px;
+      border: 1px solid blue;
+      border-radius: 5px;
+    }
+    input {
+      width: calc(100% - 10px);
+      padding: 10px;
+      border: 1px solid blue;
+    }
+    select {
+      width: 100%;
+      padding: 15px 0;
+      background: transparent;
+    }
+    .item:hover p,
+    .item:hover i,
+    .question:hover p,
+    .question label:hover,
+    input:hover::placeholder,
+    a {
+      color: #095484;
+    }
+    .item input:hover,
+    .item select:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 6px 0 #095484;
+      color: #095484;
+    }
+    .item {
+      position: relative;
+      /* margin: 10px 0; */
+    }
+
+    .item i {
+      right: 2%;
+      top: 30px;
+      z-index: 1;
+    }
+
+    .question span {
+      margin-left: 30px;
+    }
+    span.required {
+      margin-left: 0;
+      color: red;
+    }
+
+    button:hover {
+      background: #0666a3;
+    }
+    @media (min-width: 568px) {
+      .name-item,
+      .city-item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .name-item input,
+      .domain-item input {
+        width: calc(50% - 20px);
+      }
+      .domain-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+    }
+    .domain-item select {
+      width: calc(60% - 8px);
+    }
+    ul.dropdown{
+      display: none;
+
+    }
+    .show{
+      display: block;
+      flex-direction: column;
+      gap: 10px;
+      margin-left: 10px;
+      margin-top: 10px;
+      background-color: white;
+      border-radius: 5px;
+      padding: 10px;
+      position: absolute;
+      z-index: 1;
+      width: 200px;
+      height: 200px;
+      box-shadow: 0 0 20px 0 #fff;
+    }
+  </style>
+
+  <body>
+    <header style="max-width: 1600px; margin: auto" class="brand-navigation">
+      <div class="brandcontent">
+        <img class="logo-nav" src="/templates/assets/Logo.png" />
+        <nav>
+          <ul class="navigation">
+            <li><a href="#" style="color: blue">My URLS</a></li>
+            <li>
+              <a style="text-decoration: none" href="#features">Features <span class="dropdown-toggle">v</span></a>
+              <!-- dropdwon -->
+              <ul class="dropdown">
+                <li><a href="#">Link Shortening</a></li>
+                <li><a href="#">Branded Links</a></li>
+                <li><a href="#">Analytics</a></li>
+              </ul>
+
+            </li>
+            <li><a style="text-decoration: none" href="#pricing">Pricing</a></li>
+            <li><a style="text-decoration: none" href="#analytics">Analytics</a></li>
+            <li><a style="text-decoration: none" href="#faqs">FAQS</a></li>
+          </ul>
+        </nav>
+        <a href="#">Log in</a>
+        <div class="nav">
+          <button class="button">Try for free</button>
+        </div>
       </div>
-
+    </header>
+    <!-- hero seciton -->
+    <div style="gap: 50px" class="hero-section">
+      <div class="h1">
+        <h1 style="color: black">Optimize Your online exprerience with our</h1>
+        <h1 style="display: flex; text-transform: capitalize; color: black">
+          Advanced <span style="margin-left: 3px"></span>
+          <span style="color: blue" class="short-line">
+            URL Shortening<img src="/templates/assets/hero-image.png"
+          /></span>
+          Solution
+        </h1>
+      </div>
+      <p style="text-align: center;margin: auto; font-size: 20px;">
+        Personalize yout shortened URLs to align with your brand
+        identity.Utilize custom slugs,<br/> branded links, and domain customization<br/>
+        options to reinforce your brand presence and enhance user engagement.
+      </p>
+      <div class="button-group">
+        <a href="#" class="button button-pricing">Sign Up</a>
+        <a style="color: blue" href="#" class="learn-more">Learn More</a>
+      </div>
     </div>
-  </header>
 
-  <div class="bodyimage">
-    <img src="/templates/assets/imagebody.png" alt="Image Description">
-    <img src="/templates/assets/Ellipse 1.png" alt="Image Description">
-  </div>
-
+    <!-- about -->
+    <div class="about">
+      <div class="bodyimage">
+        <img src="/templates/assets/imagebody.png" alt="Image Description" />
+      </div>
+      <div class="about-image">
+        <img src="/templates/assets/Ellipse 1.png" alt="Image Description" />
+      </div>
+      <div class="image-description">
+        <div class="one-stop">
+          <h1>One Stop.</h1>
+          <h1>Four <span class="sln">Solution</span>.</h1>
+        </div>
+        <div class="solution">
+          <div class="1">
+            <h1>3M</h1>
+            <p>Active Users</p>
+          </div>
+          <div class="2">
+            <h1>60M</h1>
+            <p>Links & QR Codes Created</p>
+          </div>
+          <div class="3">
+            <h1>1B</h1>
+            <p>Clicked & Scanned Connections</p>
+          </div>
+          <div class="4">
+            <h1>300K</h1>
+            <p>App Intergration</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- why choose scissors -->
+    <div style="margin-top: 50px; width: 100%; height: 600px" class="why">
+      <div class="why-title">
+        <div class="title-icon">
+          <img src="/templates//assets//Line 70.png" alt="" />
+          <h1>Why choose <span style="color: blue">Scissors</span></h1>
+        </div>
+        <p style="text-align: center; ">
+          Scissors is the hub of everything that has to do<br/> with your link
+          management.We shrten URLs, allow you creating custom ones for your<br/>
+          personal,business,event usage.Our swift QR code creation,management<br/>
+          and usage tracking with advance analytics for all of these is second
+          to none.
+        </p>
+      </div>
+      <div class="why-cards">
+        <div class="card">
+          <img
+            class="img"
+            src="/templates/assets/why-url.png"
+            alt="Image Description"
+          />
+          <h2>URL Shortening</h2>
+          <p>
+            Build and protect your brand using custom domains, which increases
+            trust among your audience and improves click-through rates.
+          </p>
+        </div>
+        <div class="card">
+          <img
+            class="img"
+            src="/templates/assets/edit.png"
+            alt="Image Description"
+          />
+          <h2>Custom URLs</h2>
+          <p>
+            Set an expiration date for your links to increase their relevance
+            and improve user experience.
+          </p>
+        </div>
+        <div class="card">
+          <img
+            class="img"
+            src="/templates/assets/qr-code-1.png"
+            alt="Image Description"
+          />
+          <h2>QR Codes</h2>
+          <p>
+            Set an expiration date for your links to increase their relevance
+            and improve user experience.
+          </p>
+        </div>
+        <div class="card">
+          <img
+            class="img"
+            src="/templates/assets/activity.png"
+            alt="Image Description"
+          />
+          <h2>Data Analytics</h2>
+          <p>
+            Set an expiration date for your links to increase their relevance
+            and improve user experience.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="pricing" class="bodytext">
+      <div id="price">
+        <img src="/templates//assets//Line 70.png" alt="" />
+        <h1>A <span class="price">price perfect </span> for your needs</h1>
+      </div>
+      <p style="text-align: center; font-size: 20px; margin-top: 30px;">
+        From catering for your personal,business,event,socials needs,you can be<br/>
+        rest assured we have you in our pricing
+      </p>
+      <div class="cards">
+        <div class="card1">
+          <h2>Basic</h2>
+          <p class="bold">Free</p>
+          <div
+            id="free"
+            style="display: flex; flex-direction: column; gap: 6px"
+          >
+            <div style="display: flex; gap: 2px">
+              <img src="/templates/assets/check-circle.png" alt="" />
+              <p style="font-size: 16px">Basic Link Analytics</p>
+            </div>
+            <div style="display: flex; gap: 2px">
+              <img src="/templates/assets/check-circle.png" alt="" />
+              <p>Customize short links</p>
+            </div>
+            <div style="display: flex; gap: 2px">
+              <img src="/templates/assets/check-circle.png" alt="" />
+              <p>Standard Support</p>
+            </div>
+            <div style="display: flex; gap: 2px">
+              <img src="/templates/assets/check-circle.png" alt="" />
+              <p>Ad Supported</p>
+            </div>
+            <div style="display: flex; gap: 2px">
+              <img src="/templates/assets/check-circle.png" alt="" />
+              <p class="font-size:16px">Unlimited URL Shortening</p>
+            </div>
+          </div>
+        </div>
+        <div class="card2">
+          <h2>Professional</h2>
+          <p style="color: white" class="bold">$15/month</p>
+          <p>Ideal for business creators</p>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <div style="display: flex; gap: 2px">
+              <img src="/templates/assets/check-circle.png" alt="" />
+              <p>Enhance Link Analytics</p>
+            </div>
+            <div style="display: flex; gap: 2px">
+              <img src="/templates/assets/check-circle.png" alt="" />
+              <p>Custom Branded Domains</p>
+            </div>
+            <div style="display: flex; gap: 2px">
+              <img src="/templates/assets/check-circle.png" alt="" />
+              <p>Enhanced Link Optimization</p>
+            </div>
+            <div style="display: flex; gap: 2px">
+              <img src="/templates/assets/check-circle.png" alt="" />
+              <p>Pririty Support</p>
+            </div>
+            <div style="display: flex; gap: 2px">
+              <img src="/templates/assets/check-circle.png" alt="" />
+              <p>Add free EXperience</p>
+            </div>
+          </div>
+        </div>
+        <div class="card3">
+          <h2>Teams</h2>
+          <p class="bold">$25/month</p>
+          <div style="display: flex; gap: 5px">
+            <img src="/templates/assets/check-circle.png" alt="" />
+            <p>Free plan for all users</p>
+          </div>
+          <div style="display: flex; gap: 2px">
+            <img src="/templates/assets/check-circle.png" alt="" />
+            <p>Free plan for all users</p>
+          </div>
+          <div style="display: flex; gap: 2px">
+            <img src="/templates/assets/check-circle.png" alt="" />
+            <p>Free plan for all users</p>
+          </div>
+          <div style="display: flex; gap: 2px">
+            <img src="/templates/assets/check-circle.png" alt="" />
+            <p>Free plan for all users</p>
+          </div>
+          <div style="display: flex; gap: 2px">
+            <img src="/templates/assets/check-circle.png" alt="" />
+            <p>Free plan for all users</p>
+          </div>
+        </div>
+      </div>
+      <div class="button-group">
+        <button class="button button-custom">Get Custome Pricing</button>
+        <button class="button button-pricing">Select Pricing</button>
+      </div>
+    </div>
+    <!-- DOMAIN FORM -->
 
     <div class="form">
-        <div class="container">
-            <form action="#">
-                <div class="details1">
-                    <div class="input-box">
-                        <span class="details"></span>
-                        <input type="text" placeholder="Paste URL here" required>
-                    </div>
+      <div class="image1">
+        <img
+          class="form-image"
+          src="/templates/assets/get-started-vector-1.png"
+          alt=""
+        />
+        <img
+          class="form-image"
+          src="/templates/assets/get-started-vector-2.png"
+          alt=""
+        />
 
-                    <div class="details2">
-                        <div class="dropdown">
-                            <button class="dropbtn">Choose Domain </button>
-                            <div class="dropdown-content">
-                                <a href="#"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="details3">
-                        <div class="input-box">
-                            <span class="details"></span>
-                            <input type="text" placeholder="Type Alias here" required>
-                        </div>
-                    </div>
-                </div>
-                    <div class="button">
-                        <input type="submit" value="Trim URL">
-                    </div>
-                    <p>By clicking TrimURL, I agree to the <b>
-                        Terms of Service,Privacy Policy</b> and Use of Cookies</p>
-            </form>
+        <img
+          class="form-image"
+          src="/templates/assets/get-started-vector-3.png"
+          alt=""
+        />
+      </div>
+      <div class="container">
+        <div class="testbox">
+          <form>
+            <div class="item">
+              <input type="text" name="name" placeholder="paste URLs here" />
+              <div class="domain-item">
+                <select>
+                  <option value="">Choose Domain</option>
+                  <option value="1">Free</option>
+                  <option value="2">Pro</option>
+                  <option value="3">Teams</option>
+                  <option value="4">Basic</option>
+                  <option value="5">Pro</option>
+                </select>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Type Alias here..."
+                />
+              </div>
+            </div>
+
+            <div style="width: 100%;" class="button-group">
+              <button class="button button-pricing" type="submit">
+                Trim URL
+              </button>
+            </div>
+            <p style="color: blue; margin-bottom: 5px; text-align: center;">By clicking Trim URL you are agreeing to the <span style="font-weight: 700;">Terms of Service,Privacy Policies</span></p>
+          </form>
         </div>
+      </div>
+      <div class="image2">
+        <img
+          class="form-image2"
+          src="/templates/assets/get-started-vector-4.png"
+          alt=""
+        />
+        <img
+          class="form-image2"
+          src="/templates/assets/get-started-vector-5.png"
+          alt=""
+        />
+        <img
+          class="form-image2"
+          src="/templates/assets/get-started-vector-6.png"
+          alt=""
+        />
+      </div>
     </div>
 
+    <!-- FAQS -->
 
-    <div class="faq">
-        <div class="container">
-        <h2>
-            <img src="/templates/Line 70.png" alt="FAQ Image" width="" height="50">
-            FAQ</h2>
+    <div id="faqs" class="faq">
+      <div class="faq-image">
+        <img
+          class="faq-image1"
+          src="/templates/assets/faq-vector-1.png"
+          alt=""
+        />
+        <img
+          class="faq-image1"
+          src="/templates/assets/faq-vector-2.png"
+          alt=""
+        />
+        <img
+          class="faq-image1"
+          src="/templates/assets/faq-vector-3.png"
+          alt=""
+        />
+      </div>
+      <div class="container">
+        <div style="display: flex; gap: 5px; justify-content: center; align-items: center; margin-bottom: 100px;" class="">
+          <img
+            src="/templates/assets/Line 70.png"
+            alt="FAQ Image"
+            width=""
+            height="50"
+          />
+          <h2>FAQ</h2>
+        </div>
 
         <div class="accordion">
           <div class="accordion-item">
@@ -85,167 +495,273 @@
             </button>
             <div class="accordion-content">
               <p>
-                URL shortening works by taking a long URL and creating a shorter,condensed version that redirec to the
-                 original URL.When a user clicks on the shortened link,they are redirected to the intended destination.
+                URL shortening works by taking a long URL and creating a
+                shorter,condensed version that redirec to the original URL.When
+                a user clicks on the shortened link,they are redirected to the
+                intended destination.
               </p>
             </div>
           </div>
           <div class="accordion-item">
             <button id="accordion-button-2" aria-expanded="false">
-              <span class="accordion-title">Is it necessary to create an account to use the URL shortening service?</span>
+              <span class="accordion-title"
+                >Is it necessary to create an account to use the URL shortening
+                service?</span
+              >
               <span class="icon" aria-hidden="true"></span>
             </button>
           </div>
           <div class="accordion-item">
             <button id="accordion-button-3" aria-expanded="false">
-              <span class="accordion-title">Are the shortened links permanent? Will they expire?</span>
+              <span class="accordion-title"
+                >Are the shortened links permanent? Will they expire?</span
+              >
               <span class="icon" aria-hidden="true"></span>
             </button>
           </div>
           <div class="accordion-item">
             <button id="accordion-button-4" aria-expanded="false">
-              <span class="accordion-title">Can l customize the shortened URLS to reflect my brand or content</span>
+              <span class="accordion-title"
+                >Can l customize the shortened URLS to reflect my brand or
+                content</span
+              >
               <span class="icon" aria-hidden="true"></span>
             </button>
           </div>
           <div class="accordion-item">
             <button id="accordion-button-5" aria-expanded="false">
-              <span class="accordion-title">Can l track the perfomance of my shortened URLS?</span>
+              <span class="accordion-title"
+                >Can l track the perfomance of my shortened URLS?</span
+              >
               <span class="icon" aria-hidden="true"></span>
             </button>
           </div>
 
           <div class="accordion-item">
             <button id="accordion-button-6" aria-expanded="false">
-              <span class="accordion-title">How secure is the URL shrtening sevice? Are the shortened links protected
-                against spam or malicious activity?            </span>
+              <span class="accordion-title"
+                >How secure is the URL shrtening sevice? Are the shortened links
+                protected against spam or malicious activity?
+              </span>
               <span class="icon" aria-hidden="true"></span>
             </button>
           </div>
 
           <div class="accordion-item">
             <button id="accordion-button-5" aria-expanded="false">
-              <span class="accordion-title">What is a QR code and what can it do?</span>
+              <span class="accordion-title"
+                >What is a QR code and what can it do?</span
+              >
               <span class="icon" aria-hidden="true"></span>
             </button>
           </div>
 
           <div class="accordion-item">
             <button id="accordion-button-5" aria-expanded="false">
-              <span class="accordion-title">Is there an API available for intergrating the URL shortening service into
-                my own applications or websites?
+              <span class="accordion-title"
+                >Is there an API available for intergrating the URL shortening
+                service into my own applications or websites?
               </span>
               <span class="icon" aria-hidden="true"></span>
             </button>
           </div>
         </div>
       </div>
+      <div class="faq-image">
+        <img
+          class="faq-image2"
+          src="/templates/assets/footer-vector-4.png"
+          alt=""
+        />
+        <img
+          class="faq-image2"
+          src="/templates/assets/footer-vector-5.png"
+          alt=""
+        />
+        <img
+          class="faq-image2"
+          src="/templates/assets/footer-vector-6.png"
+          alt=""
+        />
+      </div>
     </div>
 
-
-<div class="banner">
-    <div class="footer-frame">
-        <h3>Revolutionizing Link Optimization</h3>
+    <!-- call to action -->
+    <div class="call-to-action">
+      <div class="container">
+        <!-- image vectors -->
+        <div class="image1">
+          <img
+            class="top-image"
+            src="/templates/assets/get-started-vector-1.png"
+            alt=""
+          />
+          <img
+            class="top-image"
+            src="/templates/assets/get-started-vector-2.png"
+            alt=""
+          />
+          <img
+            class="top-image"
+            src="/templates/assets/get-started-vector-3.png"
+            alt=""
+          />
         </div>
-        <button type="submit">Get Started</button>
-</div>
 
-    <footer class="container" >
-            <div class="row">
-                <div class="footer-col">
-                    <img src="/templates/Logo.png" alt="Your Logo">
-                    <div class ="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                </div>
+        <div class="call-to-action-content">
+          <h2 style="font-size: 20px; width: 100%; margin-bottom: 5px">
+            Revolutionizing Link Optimization
+          </h2>
+          <button class="button started">Get Started</button>
+        </div>
 
-                <div class="footer-col">
-                    <h4>Why Scissors?</h4>
-                    <ul>
-                        <li><a href="#">Scissor 101</a></li>
-                        <li><a href="#">Intergration & API</a></li>
-                        <li><a href="#">Pricing</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Solutions</h4>
-                    <ul>
-                        <li><a href="#">Social media</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                        <li><a href="#">Customer Service</a></li>
-                        <li><a href="#">For Developers</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Products</h4>
-                    <ul>
-                        <li><a href="#">Link Management</a></li>
-                        <li><a href="#">GR Codes</a></li>
-                        <li><a href="#">Link-in-bio</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">About Scissor</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Reviews</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Resource Library</a></li>
-                        <li><a href="#">Developers</a></li>
-                        <li><a href="#">App Connections</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Trust Center</a></li>
-                        <li><a href="#">Browser Extension</a></li>
-                        <li><a href="#">Mobile App</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Features</h4>
-                    <ul>
-                        <li><a href="#">Branded Links</a></li>
-                        <li><a href="#">Mobile Links</a></li>
-                        <li><a href="#">Campaign</a></li>
-                        <li><a href="#">Management</a></li>
-                        <li><a href="#">QR Code generation</a></li>
+        <div class="image2">
+          <img
+            class="bottom-image"
+            src="/templates/assets/get-started-vector-4.png"
+            alt=""
+          />
+          <img
+            class="bottom-image"
+            src="/templates/assets/get-started-vector-5.png"
+            alt=""
+          />
+          <img
+            class="bottom-image"
+            src="/templates/assets/get-started-vector-6.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
 
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Private Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Acceptable Use Policy</a></li>
-                        <li><a href="#">Code of Conduct</a></li>
-                    </ul>
-                </div>
-
-
+    <!-- FOOTER -->
+    <footer class="container-footer">
+      <div class="footer">
+        <div class="footer-image">
+          <img
+            class="top-image1"
+            src="/templates/assets/footer-vector-1.png"
+            alt=""
+          />
+          <img
+            class="top-image1"
+            src="/templates/assets/footer-vector-2.png"
+            alt=""
+          />
+          <img
+            class="top-image1"
+            src="/templates/assets/footer-vector-3.png"
+            alt=""
+          />
+        </div>
+        <div class="row">
+          <div class="footer-col">
+            <img src="/templates/assets/Logo.png" alt="Your Logo" />
+            <div class="social-links">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
             </div>
-        </div>
-        <div class="container">
-        <div class="content">
-            <p>Terms of Service | Security | Scissors 2023</p>
-        </div>
-        </div>
-      </footer>
+          </div>
 
-      <script src="/script.js"></script>
+          <div class="footer-col">
+            <h4>Why Scissors?</h4>
+            <ul>
+              <li><a href="#">Scissor 101</a></li>
+              <li><a href="#">Intergration & API</a></li>
+              <li><a href="#">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Solutions</h4>
+            <ul>
+              <li><a href="#">Social media</a></li>
+              <li><a href="#">Digital Marketing</a></li>
+              <li><a href="#">Customer Service</a></li>
+              <li><a href="#">For Developers</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Products</h4>
+            <ul>
+              <li><a href="#">Link Management</a></li>
+              <li><a href="#">GR Codes</a></li>
+              <li><a href="#">Link-in-bio</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Scissor</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Reviews</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Resource Library</a></li>
+              <li><a href="#">Developers</a></li>
+              <li><a href="#">App Connections</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Trust Center</a></li>
+              <li><a href="#">Browser Extension</a></li>
+              <li><a href="#">Mobile App</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Features</h4>
+            <ul>
+              <li><a href="#">Branded Links</a></li>
+              <li><a href="#">Mobile Links</a></li>
+              <li><a href="#">Campaign</a></li>
+              <li><a href="#">Management</a></li>
+              <li><a href="#">QR Code generation</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul style="color: black;">
+              <li><a href="#">Private Policy</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Acceptable Use Policy</a></li>
+              <li><a href="#">Code of Conduct</a></li>
+            </ul>
+          </div>
+        </div>
 
-</body>
+        <div class="footer-image">
+          <img
+            class="bottom-image1"
+            src="/templates/assets/footer-vector-4.png"
+            alt=""
+          />
+          <img
+            class="bottom-image1"
+            src="/templates/assets/footer-vector-5.png"
+            alt=""
+          />
+          <img
+            class="bottom-image1"
+            src="/templates/assets/footer-vector-6.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div style="display: flex; justify-content: flex-end; "  class="container">
+        <div  class="content">
+          <p style="display: flex; justify-content: flex-end; position: absolute; right: 14px; margin-bottom: 10px; ">Terms of Service | Security | Scissors 2023</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
 </html>
-
-
